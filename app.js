@@ -32,6 +32,7 @@ if (process.env.NODE_ENV === "development") {
 app.set("views", path.join(__dirname, "./src/views"));
 app.set("view engine", "ejs");
 
+app.use("/marksheet", express.static(path.join(__dirname + "/Marksheets")));
 app.use("/videos", express.static(path.join(__dirname + "/Lectures")));
 app.use("/thumbnail", express.static(path.join(__dirname + "/thumbnail")));
 app.use("/", auth);
@@ -61,18 +62,6 @@ app.get("/liveClass", (req, res) => {
   res.render("index", { name });
 });
 
-const pdf = require('html-pdf');
-const markSheetTemp = require('./controller/document');
-
-app.post('/create-pdf', (req, res) => {
-  pdf.create(markSheetTemp(req.body), {}).toFile('certificate.pdf', (err) => {
-      if (err) {
-          res.send(Promise.reject());
-      }
-
-      res.send(Promise.resolve());
-  });
-});
 
 app.get('/fetch-pdf', (req, res) => {
   res.sendFile(`${__dirname}/certificate.pdf`)

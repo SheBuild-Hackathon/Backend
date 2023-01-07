@@ -25,6 +25,8 @@
     "nanoid": "^3.1.30",
     "nodemon": "^2.0.13",
     "serve-favicon": "^2.5.0",
-    "socket.io": "^4.3.2"
+    "socket.io": "^4.3.2",
+    "zip-a-folder": "^1.1.5",
+    "zip-local": "^0.3.5"
   }
 }
