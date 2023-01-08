@@ -1,6 +1,7 @@
 const express = require("express");
 const { authPass } = require("../controller/authController");
 const { profile,getAll,vlab,newVlab } = require("../controller/teacherController");
+const {marksheetGeneration,zip} = require("../controller/document")
 const Teacher = require("../models/Teacher");
 const router = express.Router();
 
@@ -28,5 +29,9 @@ router.get("/getAll",authPass,getAll);
 
 router.get("/vlab",authPass,vlab);
 router.post("/newVlab",newVlab);
+
+router.post("/createMarksheet",marksheetGeneration);
+// router.get("/zip",zip);
+
 
 module.exports = router;
