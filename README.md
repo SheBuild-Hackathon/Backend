@@ -4,7 +4,7 @@
 Install my-project with npm
 
 ```bash
-git clone https://github.com/SheBuild-Hackathon/Backend
+git clone [https://github.com/SheBuild-Hackathon/Backend](https://github.com/SheBuild-Hackathon/Backend.git)
 cd Backend
 npm i
 npm run dev
